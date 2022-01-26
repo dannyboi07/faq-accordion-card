@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <script>
+    function changeClass(id) {
+      const aElement = document.getElementById(id);
+      const aNumber = aElement.id[5];
+      // console.log('Clicked');
+
+      const parentDiv = document.getElementById(`q-a-div${aNumber}`);
+      const imgChild = document.getElementById(`arrow${aNumber}`);
+      const para = document.getElementById(`q-and-a-div-p${aNumber}`);
+      const header = document.getElementById(`q-a-h${aNumber}`);
+      console.log(para.offsetHeight);
+      // console.log(para);
+      if (parentDiv.className == "q-a-container") {
+            parentDiv.className += " q-and-a-div-onstate";
+            imgChild.className = "q-and-a-img q-and-a-img-onstate";
+            header.className = "h3-color";
+            para.className += " q-and-a-div-p-onstate";
+            if ((window.screen.width < 488) && (aNumber == 3)) {
+              parentDiv.style.height = "9.84em";
+            } else if (window.screen.width < 431 && aNumber == 1) {
+              parentDiv.style.height = "9.84em";
+            }
+      } else {
+        parentDiv.className = "q-a-container";
+        imgChild.className += "q-and-a-img-offstate";
+        header.className = "h3-color-normal";
+        para.className = "q-and-a-div-p";
+        if ((window.screen.width < 488 && aNumber == 3) || (window.screen.width > 487 && aNumber == 3)) {
+              parentDiv.style = undefined;
+        } else if ((window.screen.width < 431 && aNumber == 1) || (window.screen.width > 430 && aNumber == 1)) {
+              parentDiv.style = undefined;
+        };
+      };
+      // console.log(parentDiv.className);
+    }
+  </script>
+  
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main class="card-container">
+
+    <div class="desktop-mobile-img-container">
+
+      <div class="img-woman-container">
+      
+        <div class="img-woman">
+
+        </div>
+
+      </div>
+
+      <div class="img-woman-container-desktop">
+
+        <img class="img-woman-mobile" src="/images/illustration-woman-online-desktop.svg">
+        
+      </div>
+      <div class="img-woman-box-container">
+        <img class="img-woman-desktop-box" src="/images/illustration-box-desktop.svg">
+      
+      </div>
+
+    </div>
+
+    <div class="faq-container">
+
+      <div class="header-container">
+        <h1>FAQ</h1>
+      </div>
+
+      <div class="q-and-a">
+
+        <div id="q-a-div1" class="q-a-container">
+          <button id="q-a-a1" class="q-and-a-button" href="" onclick="changeClass(this.id)">
+            <h3 id="q-a-h1" class="h3-color-normal">How many team members can I invite?</h3>
+            <img id="arrow1" class="q-and-a-img" src="/images/icon-arrow-down.svg" alt="arrow">
+          </button>
+          <p id="q-and-a-div-p1" class="q-and-a-div-p">You can invite up to 2 additional users on the Free plan. There is no limit on 
+            team members for the Premium plan.
+          </p>
+        </div>
+
+        <div id="q-a-div2" class="q-a-container">
+          <button id="q-a-a2" class="q-and-a-button" href="" onclick="changeClass(this.id)">
+            <h3 id="q-a-h2" class="h3-color-normal">What is the maximum file upload size?</h3>
+            <img id="arrow2" class="q-and-a-img" src="/images/icon-arrow-down.svg" alt="arrow">
+          </button>          
+          <p id="q-and-a-div-p2" class="q-and-a-div-p">No more than 2GB. All files in your account must fit your allotted storage space.
+          </p>
+        </div>
+
+        <div id="q-a-div3" class="q-a-container">
+          <button id="q-a-a3" class="q-and-a-button" href="" onclick="changeClass(this.id)">
+            <h3 id="q-a-h3" class="h3-color-normal">How do I reset my password?</h3>
+            <img id="arrow3" class="q-and-a-img" src="/images/icon-arrow-down.svg" alt="arrow">
+          </button>        
+          <p id="q-and-a-div-p3" class="q-and-a-div-p">Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.
+          </p>
+        </div>
+
+        <div id="q-a-div4" class="q-a-container">
+          <button id="q-a-a4" class="q-and-a-button" href="" onclick="changeClass(this.id)">
+            <h3 id="q-a-h4" class="h3-color-normal">Can I cancel my subscription?</h3>
+            <img id="arrow4" class="q-and-a-img" src="/images/icon-arrow-down.svg" alt="arrow">
+          </button>         
+          <p id="q-and-a-div-p4" class="q-and-a-div-p">Yes! Send us a message and we’ll process your request no questions asked.</p>
+        </div>
+
+        <div id="q-a-div5" class="q-a-container">
+          <button id="q-a-a5" class="q-and-a-button" href="" onclick="changeClass(this.id)">
+            <h3 id="q-a-h5" class="h3-color-normal">Do you provide additional support?</h3>
+            <img id="arrow5" class="q-and-a-img" src="/images/icon-arrow-down.svg" alt="arrow">
+          </button>          
+          <p id="q-and-a-div-p5" class="q-and-a-div-p">Chat and email support is available 24/7. 
+            Phone lines are open during normal business hours.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+  <!-- How many team members can I invite?
+  You can invite up to 2 additional users on the Free plan. There is no limit on 
+  team members for the Premium plan.
+
+  What is the maximum file upload size?
+  No more than 2GB. All files in your account must fit your allotted storage space.
+
+  How do I reset my password?
+  Click “Forgot password” from the login page or “Change password” from your profile page.
+  A reset link will be emailed to you.
+
+  Can I cancel my subscription?
+  Yes! Send us a message and we’ll process your request no questions asked.
+
+  Do you provide additional support?
+  Chat and email support is available 24/7. Phone lines are open during normal business hours. -->
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>

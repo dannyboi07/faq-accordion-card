@@ -35,6 +35,7 @@ body {
 
     font-family: 'Kumbh Sans', sans-serif;
     color: var(--vdark-desat-blue);
+    overflow: scroll;
 }
 
 .card-container {
